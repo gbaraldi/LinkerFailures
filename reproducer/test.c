@@ -1,10 +1,14 @@
-#include <stdio.h>
 #include <dlfcn.h>
-int main()
-{
-    // dlopen("/usr/lib/libc++.1.dylib", 0x0001);
-    dlopen("@executable_path/lib/libopenblas64_.0.3.21.dylib",  0x0001);
-    printf("%s\n", dlerror());
-    dlopen("@executable_path/lib/libarmadillo.9.85.1.dylib",0x0001);
-    printf("%s\n", dlerror());
+#include <stdio.h>
+
+int main() {
+  dlopen("@executable_path/lib/libgcc_s.1.dylib",
+         0x0001);
+  printf("%s\n", dlerror());
+  dlopen("@executable_path/lib/libpcre2-8.0.dylib",
+         0x0001);
+  printf("%s\n", dlerror());
+  dlopen("@executable_path/lib/libcleri.dylib.0.12.1",
+         0x0001);
+  printf("%s\n", dlerror());
 }
